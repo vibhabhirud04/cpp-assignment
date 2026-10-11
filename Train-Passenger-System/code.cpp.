@@ -1,3 +1,7 @@
+## Problem Statement: Train Passenger Record System Using Singly Linked List
+Develop a Train Passenger Record System in C++ using a singly linked list** to manage passenger information efficiently. The system should allow usersto add new passenger records containing passenger ID, name, and age. It should also provide options to delete a passenger record using the passenger ID, search for a particular passenger, and display all passenger records.
+The program should use a menu-driven approach so that users can perform different operations repeatedly until they choose to exit. It should also handle situations where no passenger records are available or a passenger ID is not found.
+
 #include <iostream>
 #include <string>
 using namespace std;
