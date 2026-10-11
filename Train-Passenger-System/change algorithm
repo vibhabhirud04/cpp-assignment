@@ -1,0 +1,45 @@
+## Algorithm: Train Passenger Record System Using Singly Linked List
+
+Step 1: Start the program.
+Step 2: Initialize the head pointer to `NULL`.
+Step 3: Display the menu with the following options:
+        - Add Passenger
+        - Delete Passenger
+        - Search Passenger
+        - Display Passengers
+        - Exit
+Step 4: Accept the user's choice.
+Step 5: Perform the selected operation.
+    #A. Add Passenger
+          1. Create a new passenger node.
+          2. Enter passenger ID, name, age, starting destination, final destination, and seat number.
+          3. Set the next pointer of the new node to `NULL`.
+          4. If the linked list is empty, assign the new node to `head`.
+          5. Otherwise, traverse to the last node and link the new node to it.
+          6. Display a success message.
+    # B. Delete Passenger
+          1. Enter the passenger ID to delete.
+          2. If the list is empty, display a message that no records are found.
+          3. If the first node contains the given ID, delete the first node and update `head`.
+          4. Otherwise, search for the node containing the given ID.
+          5. If the passenger is found, unlink and delete the node.
+          6. If the passenger is not found, display an appropriate message.
+    # C. Search Passenger
+          1. Enter the passenger ID to search.
+          2. Start traversing the list from `head`.
+          3. Compare each node's ID with the given ID.
+          4. If a match is found, display the passenger details.
+          5. If the end of the list is reached without a match, display “Passenger not found.”    
+    # D. Display Passengers
+          1. Check whether the list is empty.
+          2. If empty, display “No passenger records found.”
+          3. Otherwise, traverse the list from `head`.
+          4. Display the ID, name, age, starting destination, final destination, and seat number of each passenger.
+          5. Continue until the end of the list is reached.    
+    # E. Exit
+          1. If the user selects Exit, display the exit message.
+          2. Delete all remaining passenger nodes to free the allocated memory.
+          3. Terminate the program.
+Step 6: If the user enters an invalid menu choice or non-numeric input, display an error message.
+Step 7: Repeat the menu until the user selects Exit.
+Step 8: Stop the program.
