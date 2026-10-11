@@ -1,0 +1,212 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Node structure
+struct Passenger {
+    int id;
+    string name;
+    string startingDestination;
+    string finalDestination;
+    int age;
+    string seatLocation;
+    Passenger* next;
+};
+
+Passenger* head = NULL;
+
+// Function to add passenger
+void addPassenger() {
+    Passenger* p = new Passenger;
+
+    cout << "\nEnter Passenger ID: ";
+    cin >> p->id;
+
+    cout << "Enter Passenger Name: ";
+    cin >> ws;
+    getline(cin, p->name);
+
+    cout << "Enter Passenger Age: ";
+    cin >> p->age;
+
+    cout << "Enter Starting Destination: ";
+    cin >> ws;
+    getline(cin, p->startingDestination);
+
+    cout << "Enter Final Destination: ";
+    getline(cin, p->finalDestination);
+
+    cout << "Enter Seat Number: ";
+    cin >> p->seatLocation;
+
+    p->next = NULL;
+
+    if (head == NULL) {
+        head = p;
+    } else {
+        Passenger* temp = head;
+
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+
+        temp->next = p;
+    }
+
+    cout << "\nPassenger added successfully!\n";
+}
+
+// Function to delete passenger
+void deletePassenger() {
+    int id;
+
+    cout << "\nEnter Passenger ID to delete: ";
+    cin >> id;
+
+    if (head == NULL) {
+        cout << "No passenger records found.\n";
+        return;
+    }
+
+    if (head->id == id) {
+        Passenger* temp = head;
+        head = head->next;
+        delete temp;
+
+        cout << "Passenger deleted successfully.\n";
+        return;
+    }
+
+    Passenger* temp = head;
+
+    while (temp->next != NULL && temp->next->id != id) {
+        temp = temp->next;
+    }
+
+    if (temp->next == NULL) {
+        cout << "Passenger not found.\n";
+    } else {
+        Passenger* del = temp->next;
+        temp->next = del->next;
+        delete del;
+
+        cout << "Passenger deleted successfully.\n";
+    }
+}
+
+// Function to search passenger
+void searchPassenger() {
+    int id;
+
+    cout << "\nEnter Passenger ID to search: ";
+    cin >> id;
+
+    Passenger* temp = head;
+
+    while (temp != NULL) {
+        if (temp->id == id) {
+            cout << "\nPassenger Found!\n";
+            cout << "Passenger ID         : " << temp->id << endl;
+            cout << "Passenger Name       : " << temp->name << endl;
+            cout << "Passenger Age        : " << temp->age << endl;
+            cout << "Starting Destination : "
+                 << temp->startingDestination << endl;
+            cout << "Final Destination    : "
+                 << temp->finalDestination << endl;
+            cout << "Seat Number          : "
+                 << temp->seatLocation << endl;
+            return;
+        }
+
+        temp = temp->next;
+    }
+
+    cout << "Passenger not found.\n";
+}
+
+// Function to display all passengers
+void displayPassengers() {
+    if (head == NULL) {
+        cout << "\nNo passenger records found.\n";
+        return;
+    }
+
+    Passenger* temp = head;
+
+    cout << "\n===== TRAIN PASSENGER RECORDS =====\n";
+
+    while (temp != NULL) {
+        cout << "\nPassenger ID         : " << temp->id << endl;
+        cout << "Passenger Name       : " << temp->name << endl;
+        cout << "Passenger Age        : " << temp->age << endl;
+        cout << "Starting Destination : "
+             << temp->startingDestination << endl;
+        cout << "Final Destination    : "
+             << temp->finalDestination << endl;
+        cout << "Seat Number          : "
+             << temp->seatLocation << endl;
+        cout << "-----------------------------------\n";
+
+        temp = temp->next;
+    }
+}
+
+// Main function
+int main() {
+    int choice;
+
+    do {
+        cout << "\n===== TRAIN PASSENGER RECORD SYSTEM =====";
+        cout << "\n1. Add Passenger";
+        cout << "\n2. Delete Passenger";
+        cout << "\n3. Search Passenger";
+        cout << "\n4. Display Passengers";
+        cout << "\n5. Exit";
+
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "\nInvalid input! Please enter a number.\n";
+            continue;
+        }
+
+        switch (choice) {
+            case 1:
+                addPassenger();
+                break;
+
+            case 2:
+                deletePassenger();
+                break;
+
+            case 3:
+                searchPassenger();
+                break;
+
+            case 4:
+                displayPassengers();
+                break;
+
+            case 5:
+                cout << "\nExiting program...\n";
+                break;
+
+            default:
+                cout << "\nInvalid choice! Please try again.\n";
+        }
+
+    } while (choice != 5);
+
+    // Free allocated memory
+    while (head != NULL) {
+        Passenger* temp = head;
+        head = head->next;
+        delete temp;
+    }
+
+    return 0;
+}
