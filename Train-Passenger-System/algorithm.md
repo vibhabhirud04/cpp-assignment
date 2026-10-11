@@ -60,6 +60,4 @@ Step 6: If an invalid choice is entered, display "Invalid choice! Please try aga
 Step 7: Repeat Steps 4–6 until the user selects Exit (5).
 Step 8: Stop.
 
-Step 7: Repeat Steps 4–6 until the user selects Exit (5).
-
 Step 8: Stop.
