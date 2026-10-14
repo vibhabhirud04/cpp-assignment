@@ -1,0 +1,18 @@
+## Algorithm: AVL Tree RR Rotation
+
+1. Start.
+2. Define a node structure containing data, height, left pointer, and right pointer.
+3. Initialize the rotation counter to zero.
+4. Insert the elements `10, 20, 30` into the AVL tree.
+5. Calculate the height and balance factor of each node.
+6. Check whether an RR imbalance occurs (balance factor less than −1 and the inserted key is greater than the right child's key).
+7. If an RR imbalance occurs:
+   - Display the balance factors before rotation.
+   - Perform a left rotation to balance the tree.
+   - Update the heights of the affected nodes.
+   - Increment the rotation counter.
+   - Display the balance factors after rotation.
+8. Display the final AVL tree using preorder traversal.
+9. Display the total number of rotations performed.
+10. Repeat steps 4–9 using the second sequence `5, 10, 15, 20, 25`.
+11. Stop.
