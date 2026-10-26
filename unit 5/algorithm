@@ -1,0 +1,17 @@
+Algorithm: Campus Wi-Fi Network Using Adjacency Matrix
+Step 1: Start.
+Step 2: Read the number of Wi-Fi access points n.
+Step 3: Accept the names of all access points and store them in an array.
+Step 4: Create an n*n adjacency matrix and initialize all elements to 0.
+Step 5: Read the number of direct network links (e).
+Step 6: For each network link, accept two access-point indices u and v.
+        - Set adj[u-1][v-1] = 1.
+        - Set adj[v-1][u-1] = 1.
+This represents an undirected connection between the two access points.
+Step 7: Display the adjacency matrix with the access-point names.
+Step 8: Initialize the degree of each vertex to 0 and maxConnections to 0.
+Step 9: Calculate the degree of each vertex by adding the elements in its corresponding row of the adjacency matrix.
+Step 10: Compare each vertex's degree with maxConnections. If the degree is greater, update maxConnections.
+Step 11: Display the maximum number of direct connections.
+Step 12: Display the name of each access point whose degree equals maxConnections.
+Step 13: Stop.
