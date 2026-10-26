@@ -1,0 +1,39 @@
+Algorithm: Campus Wi-Fi Network Using Adjacency Matrix with Modifications
+
+Step 1: Start.
+Step 2: Input the number of Wi-Fi access points n and their names.
+Step 3: Create an n*n adjacency matrix and initialize all elements to 0.
+Step 4: Input the number of direct network links (e).
+Step 5: For each edge, input two vertex indices (u) and (v). Validate the indices and set adj[u-1][v-1] = 1 and adj[v-1][u-1] = 
+Step 6: Display the menu with the following operations:
+          1. Display graph
+          2. Insert a new vertex and its edges
+          3. Remove a selected edge
+          4. Display degree and direct neighbours
+          5. Exit
+Step 7: Accept the user's choice.
+
+A. Insertion of a New Vertex
+Step 8: If the user selects choice 2, input the name of the new access point.
+Step 9: Expand the adjacency matrix by adding one row and one column initialized to 0.
+Step 10: Input the number of edges for the new vertex and the indices of the existing vertices to connect.
+Step 11: Update the corresponding matrix entries to 1 in both directions and display the updated adjacency matrix.
+
+B. Deletion of a Selected Edge
+Step 12: If the user selects choice 3, input the indices of the two vertices whose edge is to be removed.
+Step 13: Check whether the indices are valid and the edge exists.
+Step 14: If valid, set adj[u-1][v-1] = 0 and adj[v-1][u-1] = 0. Otherwise, display an error message.
+Step 15: Display the updated adjacency matrix.
+
+C. Calculation of Degree and Direct Neighbours
+Step 16: If the user selects choice 4, input the index of the vertex to be checked.
+Step 17: Validate the vertex index.
+Step 18: Traverse the corresponding row of the adjacency matrix. Display the names of all vertices connected to the selected vertex and count the connections.
+Step 19: Display the degree of the selected vertex and its direct neighbours.
+
+Menu Control
+Step 20: If the user selects choice 1, display the current adjacency matrix.
+Step 21: If the user selects choice 5, terminate the program.
+Step 22: For any other choice, display an invalid-choice message.
+Step 23: Repeat the menu until the user selects Exit.
+Step 24: Stop.
